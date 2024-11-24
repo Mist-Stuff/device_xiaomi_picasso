@@ -56,16 +56,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     WifiResOverlayPicasso
 
-# Inherit from MindTheGApps
-ifeq ($(WITH_GAPPS), true)
-$(call inherit-product, vendor/gapps/arm64/arm64-vendor.mk)
-# Inherit from ih8sn to bypass Safety Net check
-$(call inherit-product, ih8sn/product.mk)
-TARGET_UNOFFICIAL_BUILD_ID += Gapps
-else
-TARGET_UNOFFICIAL_BUILD_ID += Vanilla
-endif
-
 # Inherit from sm8250-common
 $(call inherit-product, device/xiaomi/sm8250-common/common.mk)
 
